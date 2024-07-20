@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8dxm0yueifgw"
+path="res://.godot/imported/Gwyn, Lord of Cinder.mp3-72ba1c6d14db2668a10e6322ba2ef5eb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Gwyn, Lord of Cinder.mp3"
+dest_files=["res://.godot/imported/Gwyn, Lord of Cinder.mp3-72ba1c6d14db2668a10e6322ba2ef5eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

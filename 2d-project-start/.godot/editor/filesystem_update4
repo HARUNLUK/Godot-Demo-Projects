@@ -1,0 +1,7 @@
+res://game.tscn
+res://player.tscn
+res://gun.tscn
+res://boss.tscn
+res://mob.tscn
+res://big_boss.tscn
+res://BigBoss.gd

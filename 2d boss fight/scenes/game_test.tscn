@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://bb46j2q52c72j"]
+
+[ext_resource type="PackedScene" uid="uid://bwuq27fwhllt0" path="res://scenes/player.tscn" id="1_kku2q"]
+[ext_resource type="Texture2D" uid="uid://bp5m333rld3w4" path="res://assets/background/1.png" id="1_saehs"]
+[ext_resource type="Texture2D" uid="uid://cyst3inrfelho" path="res://assets/background/2.png" id="2_hlo1h"]
+[ext_resource type="PackedScene" uid="uid://vrwduwgeuxky" path="res://scenes/fire_knight.tscn" id="2_juu57"]
+[ext_resource type="Texture2D" uid="uid://v4g77urh7ccv" path="res://assets/background/7.png" id="3_vsl2e"]
+[ext_resource type="Texture2D" uid="uid://babwwhxar03iw" path="res://assets/background/8.png" id="4_ybdx8"]
+[ext_resource type="Texture2D" uid="uid://wifas76t35f2" path="res://assets/background/4.png" id="5_bgarl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1f1"]
+size = Vector2(1409, 64)
+
+[sub_resource type="Gradient" id="Gradient_6umsg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(8.66354e-07, 0, 0.433125, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_26gxs"]
+gradient = SubResource("Gradient_6umsg")
+
+[node name="GameTest" type="Node2D"]
+position = Vector2(-1, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = -10
+
+[node name="1" type="Sprite2D" parent="Node2D"]
+position = Vector2(583, 272)
+scale = Vector2(2.01215, 1.68519)
+texture = ExtResource("1_saehs")
+
+[node name="2" type="Sprite2D" parent="Node2D"]
+position = Vector2(264, 434)
+texture = ExtResource("2_hlo1h")
+
+[node name="7" type="Sprite2D" parent="Node2D"]
+position = Vector2(945, 303)
+scale = Vector2(2.27778, 2.27778)
+texture = ExtResource("3_vsl2e")
+
+[node name="8" type="Sprite2D" parent="Node2D"]
+position = Vector2(581, 319)
+scale = Vector2(2.02469, 2.02469)
+texture = ExtResource("4_ybdx8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 323)
+scale = Vector2(2.5, 2.5)
+
+[node name="Player" parent="." instance=ExtResource("1_kku2q")]
+z_index = 10
+position = Vector2(165, 469)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(487, 609)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(77, -14)
+shape = SubResource("RectangleShape2D_nw1f1")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(80, -72)
+scale = Vector2(2.06173, 0.3125)
+texture = ExtResource("5_bgarl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(77, -90)
+scale = Vector2(2.06173, 0.790123)
+texture = ExtResource("5_bgarl")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-18, 413)
+rotation = 1.57185
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(76.5, 49)
+shape = SubResource("RectangleShape2D_nw1f1")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(73.9999, 48.552)
+scale = Vector2(22.1875, 2.04525)
+texture = SubResource("GradientTexture2D_26gxs")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1267, 414)
+rotation = 1.57185
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(76.5, 49)
+shape = SubResource("RectangleShape2D_nw1f1")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(73.9999, 48.552)
+scale = Vector2(22.1875, 2.04525)
+texture = SubResource("GradientTexture2D_26gxs")
+
+[node name="FireKnight" parent="." instance=ExtResource("2_juu57")]
+position = Vector2(656, 325)
